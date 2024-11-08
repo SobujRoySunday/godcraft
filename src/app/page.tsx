@@ -1,5 +1,9 @@
+import Hero from "@/components/Hero";
+
 export default function Home() {
   return (
-    <main>Main body</main>
+    <main className="w-screen">
+      <Hero />
+    </main>
   );
 }

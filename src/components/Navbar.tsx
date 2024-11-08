@@ -1,14 +1,26 @@
 import React from 'react'
 import Image from 'next/image'
-import { logoImage } from '@/utils'
+import { logoImage, navItems, searchImage } from '@/constants'
+import Link from 'next/link'
 
 const Navbar = () => {
     return (
-        <header className='flex items-center justify-center'>
-            <div className='flex flex-row items-center gap-2 px-4 py-2'>
-                <Image src={logoImage} alt="logo" width={20} height={20} priority />
-                <h1 className='text-lg'>Godcraft</h1>
-            </div>
+        <header className='w-screen'>
+            <nav className='w-8/12 mx-auto flex items-center justify-between p-4'>
+                <Link href="/">
+                    <Image src={logoImage} alt="logo" width={17} height={18} className='hover:scale-110 transition-all' priority />
+                </Link>
+                <ul className='flex items-center gap-8'>
+                    {navItems.map((item) => (
+                        <li key={item.name}>
+                            <Link href={item.href} className='text-sm text-gray-400 hover:text-white transition-all'>
+                                {item.name}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+                <Image src={searchImage} alt="search" width={16} height={16} className='hover:scale-110 transition-all' priority />
+            </nav>
         </header>
     )
 }
