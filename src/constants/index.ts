@@ -4,6 +4,8 @@ import playerOneImage from "../../public/assets/player-1.png";
 import playerTwoImage from "../../public/assets/player-2.png";
 import playerThreeImage from "../../public/assets/player-3.png";
 
+const highlightVideos = ['/assets/highlight-1.mp4', '/assets/highlight-2.mp4', '/assets/highlight-3.mp4'];
+
 const navItems = [
     {
         name: "Store",
@@ -24,11 +26,14 @@ const navItems = [
     }
 ]
 
+// TODO: Club player images to one export
+
 export { 
     logoImage, 
     navItems,
     searchImage,
     playerOneImage,
     playerTwoImage,
-    playerThreeImage
+    playerThreeImage,
+    highlightVideos
 };

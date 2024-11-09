@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Godcraft - Ultimate Minecrafting Experience",
@@ -14,11 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`antialiased`}
-      >
+      <body>
         <Navbar />
-        {children}
+        <main className="w-full">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

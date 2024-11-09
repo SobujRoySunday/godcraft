@@ -26,11 +26,6 @@ const Hero = () => {
         gsap.to('.player', {
             y: 0,
             ease: 'power4.out',
-            scrollTrigger: {
-                trigger: '#heading',
-                start: 'top 90%',
-                end: 'bottom 90%',
-            },
             stagger: 0.1
         })
 
@@ -48,15 +43,15 @@ const Hero = () => {
             </h2>
             <div className='w-full flex flex-row justify-between items-center'>
                 <div className='flex flex-col justify-center items-center -translate-y-40 player gap-4'>
-                    <Image src={playerOneImage} alt="player one" width={150} height={150} className='h-[200px] w-auto hover:scale-110 transition-all' priority />
+                    <Image src={playerOneImage} alt="player one" width={150} height={150} className='h-[200px] w-auto hover:scale-110 transition-all' />
                     <h4 className='text-sm font-extralight text-gray-400 tracking-wider'>Explore</h4>
                 </div>
                 <div className='flex flex-col justify-center items-center -translate-y-40 player gap-4'>
-                    <Image src={playerTwoImage} alt="player one" width={150} height={150} className='h-[200px] w-auto hover:scale-110 transition-all' priority />
+                    <Image src={playerTwoImage} alt="player one" width={150} height={150} className='h-[200px] w-auto hover:scale-110 transition-all' />
                     <h4 className='text-sm font-extralight text-gray-400 tracking-wider'>Build</h4>
                 </div>
                 <div className='flex flex-col justify-center items-center -translate-y-40 player gap-4'>
-                    <Image src={playerThreeImage} alt="player three" width={150} height={150} className='h-[200px] w-auto hover:scale-110 transition-all' priority />
+                    <Image src={playerThreeImage} alt="player three" width={150} height={150} className='h-[200px] w-auto hover:scale-110 transition-all' />
                     <h4 className='text-sm font-extralight text-gray-400 tracking-wider'>Fight</h4>
                 </div>
             </div>
