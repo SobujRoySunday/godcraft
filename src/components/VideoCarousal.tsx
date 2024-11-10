@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { highlightVideos } from '@/constants'
+import Container from './Container'
 
 const VideoCarousal = () => {
     const videoRefs = useRef<HTMLVideoElement[] | null[]>([])
@@ -57,8 +58,8 @@ const VideoCarousal = () => {
     }, [currentVideoIndex]);
 
     return (
-        <section className='w-8/12 mx-auto flex flex-col p-4 gap-2'>
-            <h2 className='text-5xl font-bold'>Get highlights</h2>
+        <Container>
+            <h2>Get highlights</h2>
             <div
                 className='flex flex-row overflow-hidden w-full m-8 rounded-lg'
             >
@@ -92,7 +93,7 @@ const VideoCarousal = () => {
                     >{index + 1}</button>
                 ))}
             </div>
-        </section>
+        </Container>
     )
 }
 

@@ -37,11 +37,11 @@ const Hero = () => {
     }, []);
 
     return (
-        <section className="w-4/12 mx-auto h-[calc(100vh-56px)] flex flex-col justify-center items-center gap-10">
-            <h2 id='heading' className="w-full text-5xl font-semibold text-center opacity-0">
+        <section className="w-8/12 mx-auto h-[calc(100vh-56px)] flex flex-col justify-center items-center gap-10">
+            <h2 id='heading' className="w-full text-center opacity-0">
                 Ultimate Minecrafting Experience<span id='period'>.</span>
             </h2>
-            <div className='w-full flex flex-row justify-between items-center'>
+            <div className='w-2/3 flex flex-row justify-between items-center'>
                 <div className='flex flex-col justify-center items-center -translate-y-40 player gap-4'>
                     <Image src={playerOneImage} alt="player one" width={150} height={150} className='h-[200px] w-auto hover:scale-110 transition-all' />
                     <h4 className='text-sm font-extralight text-gray-400 tracking-wider'>Explore</h4>

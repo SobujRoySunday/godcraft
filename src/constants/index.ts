@@ -6,6 +6,29 @@ import playerThreeImage from "../../public/assets/player-3.png";
 
 const highlightVideos = ['/assets/highlight-1.mp4', '/assets/highlight-2.mp4', '/assets/highlight-3.mp4'];
 
+const creators = [
+    {
+        name: 'Thor',
+        image: '/assets/user.png',
+        tags: ['Web Developer', 'Video Editor'],
+        followers: 180,
+        socials: {
+            youtube: 'https://www.youtube.com/@thor',
+            instagram: 'https://www.instagram.com/thor'
+        }
+    },
+    {
+        name: 'DevanshXD',
+        image: '/assets/user.png',
+        tags: ['Video Editor', 'Content Creator'],
+        followers: 550,
+        socials: {
+            youtube: 'https://www.youtube.com/@thor',
+            instagram: 'https://www.instagram.com/thor'
+        }
+    },
+]
+
 const navItems = [
     {
         name: "Store",
@@ -35,5 +58,6 @@ export {
     playerOneImage,
     playerTwoImage,
     playerThreeImage,
-    highlightVideos
+    highlightVideos,
+    creators
 };
