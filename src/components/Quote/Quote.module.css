@@ -1,0 +1,13 @@
+.quoteContainer {
+    margin: 0.5rem 0;
+
+    @apply p-1 border-l-2 border-blue-500 text-gray-600 italic
+  }
+  
+  .quoteText {
+    line-height: 1.5;
+    margin: 0;
+
+    @apply text-sm
+  }
+  

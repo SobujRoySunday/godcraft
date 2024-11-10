@@ -11,7 +11,7 @@ const TopCreators = () => {
             <h2>Our Top Creators</h2>
             <div className='flex flex-wrap gap-8 p-4 justify-center'>
                 {creators.map((creator) => (
-                    <div key={creator.name} className='flex flex-col items-center border border-gray-600 rounded-lg p-4 gap-1'>
+                    <div key={creator.name} className='w-[250px] flex flex-col items-center border border-gray-600 rounded-lg p-4 gap-1'>
                         <Image src={creator.image} alt={creator.name} width={160} height={160} className='w-40 h-40 object-cover rounded-full' />
                         <h3 className='text-xl font-semibold'>{creator.name}</h3>
                         <p className='text-gray-400 text-sm'>{creator.tags.join(', ')}</p>

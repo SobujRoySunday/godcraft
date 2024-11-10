@@ -6,6 +6,15 @@ import playerThreeImage from "../../public/assets/player-3.png";
 
 const highlightVideos = ['/assets/highlight-1.mp4', '/assets/highlight-2.mp4', '/assets/highlight-3.mp4'];
 
+const contributors = [
+    {
+        name: 'Thor',
+        image: '/assets/user.png',
+        tags: ['Web Developer', 'Video Editor'],
+        message: "I love this community, full of fun and happy people"
+    }
+]
+
 const creators = [
     {
         name: 'Thor',
@@ -59,5 +68,6 @@ export {
     playerTwoImage,
     playerThreeImage,
     highlightVideos,
-    creators
+    creators,
+    contributors
 };

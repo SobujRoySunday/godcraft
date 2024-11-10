@@ -1,7 +1,7 @@
 import Hero from "@/components/Hero";
 import VideoCarousal from "@/components/VideoCarousal";
 import TopCreators from "@/components/TopCreators";
-// import TopContributors from "@/components/TopContributors";
+import TopContributors from "@/components/TopContributors";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       <Hero />
       <VideoCarousal />
       <TopCreators />
-      {/* <TopContributors /> */}
+      <TopContributors />
     </>
   );
 }
