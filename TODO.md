@@ -1,6 +1,6 @@
 # Next things to do
 
-1. Get real data of the creators from a database
+1. [DONE]Get real data of the creators from a database
 2. Get real-time followers of the creators
 3. Get real data of the contributors from a database
 4. A button to join the Discord server

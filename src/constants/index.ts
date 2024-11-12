@@ -15,29 +15,6 @@ const contributors = [
     }
 ]
 
-const creators = [
-    {
-        name: 'Thor',
-        image: '/assets/user.png',
-        tags: ['Web Developer', 'Video Editor'],
-        followers: 180,
-        socials: {
-            youtube: 'https://www.youtube.com/@thor',
-            instagram: 'https://www.instagram.com/thor'
-        }
-    },
-    {
-        name: 'DevanshXD',
-        image: '/assets/user.png',
-        tags: ['Video Editor', 'Content Creator'],
-        followers: 550,
-        socials: {
-            youtube: 'https://www.youtube.com/@thor',
-            instagram: 'https://www.instagram.com/thor'
-        }
-    },
-]
-
 const navItems = [
     {
         name: "Store",
@@ -68,6 +45,5 @@ export {
     playerTwoImage,
     playerThreeImage,
     highlightVideos,
-    creators,
     contributors
 };
