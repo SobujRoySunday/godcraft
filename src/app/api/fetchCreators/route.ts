@@ -3,6 +3,8 @@ import Creator from "@/models/creator.model";
 import { NextResponse } from "next/server";
 
 export async function GET() {
+    console.log("Fetching creators...");
+    
     try {
         await connectDB();
         const creators = await Creator.find();
