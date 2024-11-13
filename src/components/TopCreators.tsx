@@ -2,7 +2,6 @@ import React from 'react'
 import Container from './Container'
 import Image from 'next/image'
 import Link from 'next/link'
-import axios from 'axios'
 
 interface Creator {
     name: string;
