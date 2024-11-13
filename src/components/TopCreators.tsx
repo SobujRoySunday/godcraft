@@ -49,11 +49,9 @@ async function fetchCreators(): Promise<Creator[]> {
             ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
             : 'http://localhost:3000';
 
-
-
     const response = await fetch(`${baseURL}/api/fetchCreators`);
+    console.error(response);
     if (response.status !== 200) {
-        console.error(response);
         throw new Error('Failed to fetch creators');
     }
 
