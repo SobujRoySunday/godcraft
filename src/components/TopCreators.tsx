@@ -49,16 +49,20 @@ async function fetchCreators(): Promise<Creator[]> {
             ? `https://${process.env.VERCEL_URL}`
             : `http://localhost:3000`;
 
+
     const response = await fetch(`${baseURL}/api/fetchCreators`);
+    if (response.status !== 200) {
+        throw new Error('Failed to fetch creators');
+    }
 
     const creatorsData = await response.json();
-
-    if (!response) {
-        throw new Error('Failed to fetch creators');
+    if (!creatorsData) {
+        throw new Error('Failed to process creators data');
     }
 
     for (let i = 0; i < creatorsData.length; i++) {
         const youtubeAPIData = await fetchFollowersOfCreator(await extractChannelId(creatorsData[i].socials.youtube) as string);
+
         creatorsData[i].followers = youtubeAPIData?.subscriberCount;
         creatorsData[i].image = youtubeAPIData?.profilePictureUrl;
         creatorsData[i].name = youtubeAPIData?.channelName;
