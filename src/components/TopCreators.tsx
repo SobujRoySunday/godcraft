@@ -2,6 +2,8 @@ import React from 'react'
 import Container from './Container'
 import Image from 'next/image'
 import Link from 'next/link'
+import connectDB from '@/lib/db';
+import Creator from "@/models/creator.model";
 
 interface Creator {
     name: string;
@@ -44,21 +46,9 @@ async function fetchFollowersOfCreator(channelHandle: string): Promise<{
 
 
 async function fetchCreators(): Promise<Creator[]> {
-    const baseURL =
-        process.env.VERCEL_ENV === 'production'
-            ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
-            : 'http://localhost:3000';
+    connectDB();
 
-    const response = await fetch(`${baseURL}/api/fetchCreators`);
-    console.error(response);
-    if (response.status !== 200) {
-        throw new Error('Failed to fetch creators');
-    }
-
-    const creatorsData = await response.json();
-    if (!creatorsData) {
-        throw new Error('Failed to process creators data');
-    }
+    const creatorsData = await Creator.find();
 
     for (let i = 0; i < creatorsData.length; i++) {
         const youtubeAPIData = await fetchFollowersOfCreator(await extractChannelId(creatorsData[i].socials.youtube) as string);
