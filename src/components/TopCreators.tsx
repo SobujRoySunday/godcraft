@@ -52,6 +52,7 @@ async function fetchCreators(): Promise<Creator[]> {
 
     const response = await fetch(`${baseURL}/api/fetchCreators`);
     if (response.status !== 200) {
+        console.error(response);
         throw new Error('Failed to fetch creators');
     }
 
