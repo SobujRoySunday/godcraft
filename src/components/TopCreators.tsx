@@ -2,6 +2,7 @@ import React from 'react'
 import Container from './Container'
 import Image from 'next/image'
 import Link from 'next/link'
+import axios from 'axios'
 
 interface Creator {
     name: string;
@@ -46,11 +47,13 @@ async function fetchFollowersOfCreator(channelHandle: string): Promise<number> {
 
 
 async function fetchCreators(): Promise<Creator[]> {
-    const response = await fetch(`${process.env.BASE_URL}/api/fetchCreators`)
+    "use server"
+
+    const response = await axios.get(`${process.env.VERCEL_URL}/api/fetchCreators`)
     if (!response) {
         throw new Error('Failed to fetch creators');
     }
-    const creatorsData = await response.json();
+    const creatorsData = await response.data;
 
     for (let i = 0; i < creatorsData.length; i++) {
         creatorsData[i].followers = await fetchFollowersOfCreator(await extractChannelId(creatorsData[i].socials.youtube) as string);
