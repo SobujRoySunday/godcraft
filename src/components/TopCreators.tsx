@@ -54,12 +54,14 @@ async function fetchCreators(): Promise<Creator[]> {
     const response = await fetch(`${baseURL}/api/fetchCreators`);
     if (response.status !== 200) {
         console.error(response);
-        throw new Error('Failed to fetch creators');
+        console.log('Failed to fetch creators');
+        return [];
     }
 
     const creatorsData = await response.json();
     if (!creatorsData) {
-        throw new Error('Failed to process creators data');
+        console.log('Failed to process creators data');
+        return [];
     }
 
     for (let i = 0; i < creatorsData.length; i++) {
@@ -80,7 +82,7 @@ const TopCreators = async () => {
         <Container>
             <h2>Our Top Creators</h2>
             <div className='flex flex-wrap gap-8 p-4 justify-center'>
-                {creators.map((creator) => (
+                {creators && creators.map((creator) => (
                     <div key={creator.name} className='w-[250px] flex flex-col items-center border border-gray-600 rounded-lg p-4 gap-1'>
                         <Image src={creator.image} alt={creator.name} width={160} height={160} className='w-40 h-40 object-cover rounded-full' />
                         <h3 className='text-xl font-semibold'>{creator.name}</h3>
