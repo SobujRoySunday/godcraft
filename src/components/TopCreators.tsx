@@ -44,7 +44,13 @@ async function fetchFollowersOfCreator(channelHandle: string): Promise<{
 
 
 async function fetchCreators(): Promise<Creator[]> {
-    const response = await fetch(`${process.env.VERCEL_URL}/api/fetchCreators`)
+    const baseURL =
+        process.env.VERCEL_ENV === 'production'
+            ? `https://${process.env.VERCEL_URL}`
+            : `http://localhost:3000`;
+
+    const response = await fetch(`${baseURL}/api/fetchCreators`);
+
     const creatorsData = await response.json();
 
     if (!response) {
