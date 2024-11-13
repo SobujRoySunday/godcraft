@@ -45,8 +45,9 @@ async function fetchFollowersOfCreator(channelHandle: string): Promise<number> {
     return data.items[0].statistics.subscriberCount;
 }
 
+
 async function fetchCreators(): Promise<Creator[]> {
-    const response = await axios.get('http://localhost:3000/api/fetchCreators')
+    const response = await axios.get(`${process.env.BASE_URL}/api/fetchCreators`)
     if (!response) {
         throw new Error('Failed to fetch creators');
     }
