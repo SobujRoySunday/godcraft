@@ -47,11 +47,11 @@ async function fetchFollowersOfCreator(channelHandle: string): Promise<number> {
 
 
 async function fetchCreators(): Promise<Creator[]> {
-    const response = await axios.get(`${process.env.BASE_URL}/api/fetchCreators`)
+    const response = await fetch(`${process.env.BASE_URL}/api/fetchCreators`)
     if (!response) {
         throw new Error('Failed to fetch creators');
     }
-    const creatorsData = await response.data;
+    const creatorsData = await response.json();
 
     for (let i = 0; i < creatorsData.length; i++) {
         creatorsData[i].followers = await fetchFollowersOfCreator(await extractChannelId(creatorsData[i].socials.youtube) as string);
