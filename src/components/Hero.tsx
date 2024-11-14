@@ -57,7 +57,7 @@ const Hero = () => {
             </div>
             <div id='buttons' className='flex flex-row justify-center items-center gap-4 translate-y-20'>
                 <Link href="/builds" className='text-sm border-2 border-blue-500 rounded-lg px-4 py-2 hover:bg-blue-500 tranision-all'>Explore</Link>
-                <Link href="/builds" className='text-sm border-2 border-blue-500 bg-blue-500 rounded-lg px-4 py-2 hover:bg-blue-700 hover:border-blue-700 tranision-all'>Join us</Link>
+                <Link href="/login" className='text-sm border-2 border-blue-500 bg-blue-500 rounded-lg px-4 py-2 hover:bg-blue-700 hover:border-blue-700 tranision-all'>Join us</Link>
             </div>
         </section>
     )
