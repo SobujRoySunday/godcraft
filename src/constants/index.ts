@@ -6,6 +6,7 @@ import playerThreeImage from "../../public/assets/player-3.png";
 
 const highlightVideos = ['/assets/highlight-1.mp4', '/assets/highlight-2.mp4', '/assets/highlight-3.mp4'];
 
+
 const contributors = [
     {
         name: 'Thor',
@@ -14,6 +15,8 @@ const contributors = [
         message: "I love this community, full of fun and happy people"
     }
 ]
+
+const playerImages = [playerOneImage, playerTwoImage, playerThreeImage];
 
 const navItems = [
     {
@@ -35,15 +38,11 @@ const navItems = [
     }
 ]
 
-// TODO: Club player images to one export
-
 export { 
     logoImage, 
     navItems,
     searchImage,
-    playerOneImage,
-    playerTwoImage,
-    playerThreeImage,
     highlightVideos,
-    contributors
+    contributors,
+    playerImages
 };

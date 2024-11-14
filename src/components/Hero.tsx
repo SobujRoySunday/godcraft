@@ -3,7 +3,7 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import React from 'react'
-import { playerOneImage, playerThreeImage, playerTwoImage } from '@/constants'
+import { playerImages } from '@/constants'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -43,15 +43,15 @@ const Hero = () => {
             </h2>
             <div className='w-2/3 flex flex-row justify-between items-center'>
                 <div className='flex flex-col justify-center items-center -translate-y-40 player gap-4'>
-                    <Image src={playerOneImage} alt="player one" width={150} height={150} className='h-[200px] w-auto hover:scale-110 transition-all' />
+                    <Image src={playerImages[0]} alt="player one" width={150} height={150} className='h-[200px] w-auto hover:scale-110 transition-all' />
                     <h4 className='text-sm font-extralight text-gray-400 tracking-wider'>Explore</h4>
                 </div>
                 <div className='flex flex-col justify-center items-center -translate-y-40 player gap-4'>
-                    <Image src={playerTwoImage} alt="player one" width={150} height={150} className='h-[200px] w-auto hover:scale-110 transition-all' />
+                    <Image src={playerImages[1]} alt="player one" width={150} height={150} className='h-[200px] w-auto hover:scale-110 transition-all' />
                     <h4 className='text-sm font-extralight text-gray-400 tracking-wider'>Build</h4>
                 </div>
                 <div className='flex flex-col justify-center items-center -translate-y-40 player gap-4'>
-                    <Image src={playerThreeImage} alt="player three" width={150} height={150} className='h-[200px] w-auto hover:scale-110 transition-all' />
+                    <Image src={playerImages[2]} alt="player three" width={150} height={150} className='h-[200px] w-auto hover:scale-110 transition-all' />
                     <h4 className='text-sm font-extralight text-gray-400 tracking-wider'>Fight</h4>
                 </div>
             </div>
