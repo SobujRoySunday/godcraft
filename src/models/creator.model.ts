@@ -20,6 +20,9 @@ const creatorSchema = new mongoose.Schema({
         required: true
     },
     tags: [String],
+    followers: {
+        type: Number,
+    },
     socials: socialSchema
 }, {timestamps: true});
 

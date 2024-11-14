@@ -23,7 +23,7 @@ async function extractChannelId(url: string): Promise<string> {
     return username;
 }
 
-async function fetchFollowersOfCreator(channelHandle: string): Promise<{
+async function fetchYouTubeDetailsOfCreator(channelHandle: string): Promise<{
     profilePictureUrl: string;
     channelName: string;
     subscriberCount: number;
@@ -51,11 +51,13 @@ async function fetchCreators(): Promise<Creator[]> {
     const creatorsData = await Creator.find();
 
     for (let i = 0; i < creatorsData.length; i++) {
-        const youtubeAPIData = await fetchFollowersOfCreator(await extractChannelId(creatorsData[i].socials.youtube) as string);
+        const youtubeAPIData = await fetchYouTubeDetailsOfCreator(await extractChannelId(creatorsData[i].socials.youtube) as string);
 
         creatorsData[i].followers = youtubeAPIData?.subscriberCount;
         creatorsData[i].image = youtubeAPIData?.profilePictureUrl;
         creatorsData[i].name = youtubeAPIData?.channelName;
+
+        creatorsData[i].save();
     }
 
     return creatorsData;

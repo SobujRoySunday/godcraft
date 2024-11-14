@@ -4,10 +4,9 @@ import playerOneImage from "../../public/assets/player-1.png";
 import playerTwoImage from "../../public/assets/player-2.png";
 import playerThreeImage from "../../public/assets/player-3.png";
 import googleImage from "../../public/assets/google.png";
+import logoutImage from "../../public/assets/logout.webp";
 
-const highlightVideos = ['/assets/highlight-1.mp4', '/assets/highlight-2.mp4', '/assets/highlight-3.mp4'];
-
-
+//TODO: Load this from a database
 const contributors = [
     {
         name: 'Thor',
@@ -16,6 +15,8 @@ const contributors = [
         message: "I love this community, full of fun and happy people"
     }
 ]
+
+const highlightVideos = ['/assets/highlight-1.mp4', '/assets/highlight-2.mp4', '/assets/highlight-3.mp4'];
 
 const playerImages = [playerOneImage, playerTwoImage, playerThreeImage];
 
@@ -46,5 +47,6 @@ export {
     highlightVideos,
     contributors,
     playerImages,
-    googleImage
+    googleImage,
+    logoutImage
 };

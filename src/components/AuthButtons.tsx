@@ -15,7 +15,7 @@ export default function AuthButtons() {
         <div>
             <button className='flex items-center gap-2 text-white font-semibold py-2 px-8 border-2 hover:bg-gray-900 transition-all' onClick={() => handleSignIn('google')}>
                 <Image src={googleImage} alt="Google" width={24} height={24} className='h-6 object-contain' />
-                Sign in with Google
+                Continue with Google
             </button>
         </div>
     );

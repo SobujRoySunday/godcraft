@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
+
 import { highlightVideos } from '@/constants'
 import Container from './Container'
 
@@ -28,33 +29,32 @@ const VideoCarousal = () => {
         const videos = videoRefs.current as HTMLVideoElement[];
         const thisVideo = videos[currentVideoIndex];
 
-        gsap.to(thisVideo, {
-            x: (currentVideoIndex * -100) + '%',
-            duration: 1,
-            ease: 'power2.inOut',
-        })
-        thisVideo.play();
-
-        thisVideo.addEventListener('ended', () => {
+        const onVideoEnd = () => {
             if (currentVideoIndex < videos.length - 1) {
                 gsap.to(thisVideo, {
                     x: (currentVideoIndex * -100) - 100 + '%',
                     duration: 1,
                     ease: 'power2.inOut',
-                })
+                });
                 setCurrentVideoIndex(currentVideoIndex + 1);
-            }
-
-            if (currentVideoIndex === videos.length - 1) {
+            } else {
                 setCurrentVideoIndex(0);
                 reset();
             }
-        })
+        };
 
-        return () => {
-            thisVideo.removeEventListener('ended', () => { })
+        gsap.to(thisVideo, {
+            x: (currentVideoIndex * -100) + '%',
+            duration: 1,
+            ease: 'power2.inOut',
+        });
+        thisVideo.play().catch(() => {
+            console.error('Failed to play video');
             thisVideo.pause();
-        }
+        });
+
+        thisVideo.addEventListener('ended', onVideoEnd);
+        return () => thisVideo.removeEventListener('ended', onVideoEnd);
     }, [currentVideoIndex]);
 
     return (

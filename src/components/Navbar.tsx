@@ -1,25 +1,33 @@
-import React from 'react'
+'use client'
+
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { logoImage, navItems, searchImage } from '@/constants'
 import Link from 'next/link'
-import { cookies } from 'next/headers'
-import { verifyAuthToken } from '@/lib/auth'
 
-interface User {
-    id: string,
-    email: string,
-    name: string,
-    picture: string
-}
+import { User } from '@/lib/types'
+import { logoImage, navItems, searchImage, logoutImage } from '@/constants'
+import { useRouter } from 'next/navigation'
 
-const Navbar = async () => {
-    const cookieStore = await cookies();
-    const authToken = cookieStore.get('auth-token')?.value;
+const Navbar = () => {
+    const [user, setUser] = useState<User | null>(null);
+    const router = useRouter();
 
-    let userData = null;
-    if (authToken) {
-        userData = await verifyAuthToken(authToken) as User;
+    const getAndSetUserDataFromServerSide = async (): Promise<User | null> => {
+        const response = await fetch(`/api/auth/getAuthTokenData`);
+        if (response.status !== 200) return null;
+        const data = await response.json();
+        setUser(data);
+        return data;
     }
+
+    const handleLogout = async () => {
+        setUser(null);
+        router.push('/api/auth/logout');
+    }
+
+    useEffect(() => {
+        getAndSetUserDataFromServerSide();
+    }, []);
 
     return (
         <header className='w-full'>
@@ -38,10 +46,15 @@ const Navbar = async () => {
                 </ul>
                 <div className='flex gap-4'>
                     <Image src={searchImage} alt="search" width={16} height={16} className='hover:scale-110 transition-all object-contain' />
-                    {userData && (
-                        <Link href={`/profile/${userData.id}`} >
-                            <Image src={userData.picture} alt='profile' width={20} height={20} className='rounded-full object-contain hover:scale-110 transition-all' />
-                        </Link>
+                    {user && (
+                        <>
+                            <Link href={`/profile/${user.id}`} >
+                                <Image src={user.picture} alt='profile' width={20} height={20} className='rounded-full object-contain hover:scale-110 transition-all' />
+                            </Link>
+                            <button className='text-sm text-gray-400 hover:text-white transition-all' onClick={handleLogout}>
+                                <Image src={logoutImage} alt='logout' width={20} height={20} className='rounded-full object-contain hover:scale-110 transition-all invert' />
+                            </button>
+                        </>
                     )}
                 </div>
             </nav>
