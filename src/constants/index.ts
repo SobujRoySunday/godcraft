@@ -3,6 +3,7 @@ import searchImage from "../../public/assets/search.png";
 import playerOneImage from "../../public/assets/player-1.png";
 import playerTwoImage from "../../public/assets/player-2.png";
 import playerThreeImage from "../../public/assets/player-3.png";
+import googleImage from "../../public/assets/google.png";
 
 const highlightVideos = ['/assets/highlight-1.mp4', '/assets/highlight-2.mp4', '/assets/highlight-3.mp4'];
 
@@ -44,5 +45,6 @@ export {
     searchImage,
     highlightVideos,
     contributors,
-    playerImages
+    playerImages,
+    googleImage
 };

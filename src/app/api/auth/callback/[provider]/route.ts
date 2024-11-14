@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import jwt from 'jsonwebtoken';
+import connectDB from '@/lib/db';
+import User from '@/models/user.model';
 
 const getToken = async (code: string) => {
   const providerData = {
@@ -38,14 +40,32 @@ export async function GET(req: NextRequest) {
 
   const profile = await profileRes.json();
 
-  console.log(profile);
+  const {email, name, picture} = profile;
 
+  connectDB();
 
+  // Check if user already exists while not selecting the password
+  let user = await User.findOne({ email })
+  if(user){
+    user.name = name;
+    user.picture = picture;
+    user.save();
+  } else {
+    user = await User.create({ email, name, picture })
+  }
+
+  const thisUserData = {
+    id: user._id,
+    email: user.email,
+    name: user.name,
+    picture: user.picture
+  }
+  
   // Sign a JWT with user information
-  const token = jwt.sign(profile, process.env.JWT_SECRET!, { expiresIn: '1h' });
+  const token = jwt.sign(thisUserData, process.env.JWT_SECRET!, { expiresIn: '1h' });
 
   // Optionally, set a cookie and redirect
-  const response = NextResponse.redirect('http://localhost:3000/');
+  const response = NextResponse.redirect(`${process.env.NEXT_PUBLIC_BASE_URL}/`);
   response.cookies.set('auth-token', token, { httpOnly: true, maxAge: 3600 });
 
   return response;

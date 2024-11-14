@@ -1,5 +1,7 @@
 'use client';
 
+import { googleImage } from '@/constants';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 export default function AuthButtons() {
@@ -11,7 +13,10 @@ export default function AuthButtons() {
 
     return (
         <div>
-            <button className='bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-8 rounded' onClick={() => handleSignIn('google')}>Sign in with Google</button>
+            <button className='flex items-center gap-2 text-white font-semibold py-2 px-8 border-2 hover:bg-gray-900 transition-all' onClick={() => handleSignIn('google')}>
+                <Image src={googleImage} alt="Google" width={24} height={24} className='h-6 object-contain' />
+                Sign in with Google
+            </button>
         </div>
     );
 }
