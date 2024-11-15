@@ -5,6 +5,7 @@ import playerTwoImage from "../../public/assets/player-2.png";
 import playerThreeImage from "../../public/assets/player-3.png";
 import googleImage from "../../public/assets/google.png";
 import logoutImage from "../../public/assets/logout.webp";
+import discordImage from '../../public/assets/discord.webp'
 
 const highlightVideos = ['/assets/highlight-1.mp4', '/assets/highlight-2.mp4', '/assets/highlight-3.mp4'];
 
@@ -37,5 +38,6 @@ export {
     highlightVideos,
     playerImages,
     googleImage,
-    logoutImage
+    logoutImage,
+    discordImage
 };

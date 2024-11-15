@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { User } from '@/lib/types'
-import { logoImage, navItems, searchImage, logoutImage } from '@/constants'
+import { logoImage, navItems, searchImage, logoutImage, discordImage } from '@/constants'
 import { useRouter } from 'next/navigation'
 
 const Navbar = () => {
@@ -43,6 +43,11 @@ const Navbar = () => {
                             </Link>
                         </li>
                     ))}
+                    <li>
+                        <Link href='https://discord.com/invite/7qEqykx7wB' target='_blank'>
+                            <Image src={discordImage} alt='discord' width={16} height={16} className='object-contain hover:scale-110 transition-all' />
+                        </Link>
+                    </li>
                 </ul>
                 <div className='flex gap-4'>
                     <Image src={searchImage} alt="search" width={16} height={16} className='hover:scale-110 transition-all object-contain' />

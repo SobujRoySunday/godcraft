@@ -5,7 +5,7 @@
 3. [DONE]Implement Display image of the creator using YouTube data api v3
 4. [DONE]Implement authentication
 5. [DONE]Get real data of the contributors from a database
-6. A button to join the Discord server
+6. [DONE] A button to join the Discord server
 7. Make the build page
 8. Servers page
 9. Community - Forum, logged in users will be able to discuss different things in different threads, these threads will support normal messages, emojis, photos
