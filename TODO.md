@@ -4,7 +4,7 @@
 2. [DONE]Get real-time followers of the creators
 3. [DONE]Implement Display image of the creator using YouTube data api v3
 4. [DONE]Implement authentication
-5. Get real data of the contributors from a database
+5. [DONE]Get real data of the contributors from a database
 6. A button to join the Discord server
 7. Make the build page
 8. Servers page

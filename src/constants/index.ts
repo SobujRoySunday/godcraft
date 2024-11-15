@@ -6,16 +6,6 @@ import playerThreeImage from "../../public/assets/player-3.png";
 import googleImage from "../../public/assets/google.png";
 import logoutImage from "../../public/assets/logout.webp";
 
-//TODO: Load this from a database
-const contributors = [
-    {
-        name: 'Thor',
-        image: '/assets/user.png',
-        tags: ['Web Developer', 'Video Editor'],
-        message: "I love this community, full of fun and happy people"
-    }
-]
-
 const highlightVideos = ['/assets/highlight-1.mp4', '/assets/highlight-2.mp4', '/assets/highlight-3.mp4'];
 
 const playerImages = [playerOneImage, playerTwoImage, playerThreeImage];
@@ -45,7 +35,6 @@ export {
     navItems,
     searchImage,
     highlightVideos,
-    contributors,
     playerImages,
     googleImage,
     logoutImage
