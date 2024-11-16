@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GodCraft Website 🌍
 
-## Getting Started
+Welcome to the **GodCraft Website** repository! This project is dedicated to creating a platform for the **GodCraft Minecraft Community**, featuring a public Minecraft network server and a technical Minecraft SMP. Explore, engage, and enjoy our vibrant community!
 
-First, run the development server:
+## 🚀 Current Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 1. **Homepage**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Top Creators Section:** Highlighting the most prominent community members.
+- **Top Contributors Section:** Recognizing individuals who contribute significantly to the server and community.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 2. **Store** (Coming Soon)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- A dedicated store page for purchasing in-game items and perks. _(Currently non-operational as payment gateway integration is pending.)_
 
-## Learn More
+### 3. **Builds Showcase**
 
-To learn more about Next.js, take a look at the following resources:
+- A gallery showcasing the best and most creative Minecraft builds from the community.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 4. **Community Forum**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- A space for players to discuss, share ideas, and connect with fellow community members.
 
-## Deploy on Vercel
+### 5. **Server Page**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Information about the GodCraft Minecraft network server, including how to join and play.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** [Next.js](https://nextjs.org/) (with TypeScript)
+- **Backend:** Node.js (Planned for additional server-side features)
+- **Database:** MongoDB (Planned for user profiles and data storage)
+- **Authentication:** Google and Discord OAuth
+- **Styling:** Tailwind CSS (or other CSS frameworks as needed)
+
+---
+
+## 🌟 Future Enhancements
+
+We're actively working on expanding the platform! Some planned features include:
+
+- Player profiles with stats and achievements
+- Real-time server status dashboard
+- Event calendar and registration
+- Leaderboards and gamification
+- Enhanced store functionality with payment gateway integration
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions to the GodCraft Website! If you're interested in helping, feel free to:
+
+1. Fork the repository.
+2. Create a new branch (`feature/your-feature-name`).
+3. Submit a pull request with your changes.
+
+---
+
+## 📧 Contact
+
+For inquiries or feedback, reach out to us:
+
+- **Community Discord:** [Join Here](#) _(Replace with actual Discord link)_
+- **Email:** godcraft@example.com _(Replace with your contact email)_
+
+---
+
+### 🌐 Live Demo
+
+[LIVE DEMO](https://godcraft.vercel.app/)
