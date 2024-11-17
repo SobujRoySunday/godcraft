@@ -6,11 +6,12 @@ import Link from 'next/link'
 
 import { User } from '@/lib/types'
 import { logoImage, navItems, searchImage, logoutImage, discordImage } from '@/constants'
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 
 const Navbar = () => {
     const [user, setUser] = useState<User | null>(null);
     const router = useRouter();
+    const currentPath = usePathname();
 
     const getAndSetUserDataFromServerSide = async (): Promise<User | null> => {
         const response = await fetch(`/api/auth/getAuthTokenData`);
@@ -38,7 +39,7 @@ const Navbar = () => {
                 <ul className='flex items-center gap-8'>
                     {navItems.map((item) => (
                         <li key={item.name}>
-                            <Link href={item.href} className='text-sm text-gray-400 hover:text-white transition-all'>
+                            <Link href={item.href} className={`text-sm text-gray-400 hover:text-white transition-all ${currentPath === item.href ? 'text-white' : ''}`}>
                                 {item.name}
                             </Link>
                         </li>
