@@ -22,8 +22,14 @@ const Servers = () => {
                 <h2>Our minecraft servers</h2>
                 {servers.length > 0 && servers.map((server) => (
                     <>
-                        <div className='flex flex-col w-full border-[1px] border-gray-500'>
-                            <Image src={server.image} alt="Servers" width={1280} height={360} className='w-full h-full object-contain' />
+                        <div key={server.name} className='flex flex-col w-full border-[1px] border-gray-500'>
+                            <Image
+                                src={server.image}
+                                alt="Servers"
+                                width={1280}
+                                height={360}
+                                className='w-full h-full object-contain'
+                            />
                             <div className='p-4 flex flex-col gap-4'>
                                 <h3 className='text-2xl font-semibold'>{server.name}</h3>
                                 <p className='text-gray-400'>{server.description}</p>
