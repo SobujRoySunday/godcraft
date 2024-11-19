@@ -6,6 +6,7 @@ import playerThreeImage from "../../public/assets/player-3.png";
 import googleImage from "../../public/assets/google.png";
 import logoutImage from "../../public/assets/logout.webp";
 import discordImage from '../../public/assets/discord.webp'
+import pathList from "./pathList";
 
 const highlightVideos = ['/assets/highlight-1.mp4', '/assets/highlight-2.mp4', '/assets/highlight-3.mp4'];
 
@@ -32,6 +33,7 @@ const navItems = [
 ]
 
 export { 
+    pathList,
     logoImage, 
     navItems,
     searchImage,

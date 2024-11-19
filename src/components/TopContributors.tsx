@@ -2,22 +2,9 @@ import React from 'react'
 import Container from './Container'
 import Image from 'next/image'
 import Quote from './Quote/Quote'
-import connectDB from '@/lib/db'
-import Contributor from '@/models/contributor.model'
+import { fetchContributors } from '@/lib'
 
 const TopContributors = async () => {
-    const fetchContributors = async () => {
-        return connectDB().then(async () => {
-            const contributors = await Contributor.find();
-            if (contributors.length === 0)
-                return null;
-            return contributors;
-        }).catch((error) => {
-            console.error(error);
-            return null;
-        })
-    }
-
     const contributors = await fetchContributors();
 
     return (
